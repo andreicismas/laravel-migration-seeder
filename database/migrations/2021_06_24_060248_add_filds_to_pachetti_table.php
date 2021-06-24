@@ -35,17 +35,17 @@ class AddFildsToPachettiTable extends Migration
     public function down()
     {
         Schema::table('pachetti', function (Blueprint $table) {
-            $table->mediumInteger('id_viaggio');
-            $table->string('tipo_pachetto');
-            $table->date('partenza');
-            $table->date('ritorno');
-            $table->string('periodo_anno')->comment('inverno/estate/autuno');
-            $table->string('meta');
-            $table->longText('descrizione');
-            $table->boolean('disponibilita');
-            $table->smallInteger('posti_totali');
-            $table->float('prezzo');		
-            $table->float('sconto_fidely');
+            $table->dropColumn('id_viaggio');
+            $table->dropColumn('tipo_pachetto');
+            $table->dropColumn('partenza');
+            $table->dropColumn('ritorno');
+            $table->dropColumn('periodo_anno')->comment('inverno/estate/autuno');
+            $table->dropColumn('meta');
+            $table->dropColumn('descrizione');
+            $table->dropColumn('disponibilita');
+            $table->dropColumn('posti_totali');
+            $table->dropColumn('prezzo');		
+            $table->dropColumn('sconto_fidely');
         });
     }
 }
